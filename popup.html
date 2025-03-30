@@ -1,0 +1,88 @@
+// popup.html
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>LeetCode to GitHub</title>
+    <style>
+      body {
+        width: 300px;
+        padding: 15px;
+        font-family: Arial, sans-serif;
+      }
+      .hidden {
+        display: none;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      input, select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      .status {
+        margin-top: 10px;
+        padding: 10px;
+        border-radius: 4px;
+      }
+      .success {
+        background-color: #d4edda;
+        color: #155724;
+      }
+      .error {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>LeetCode to GitHub</h2>
+    
+    <div id="login-section">
+      <div id="not-logged-in">
+        <p>Connect to GitHub to automatically save your LeetCode solutions</p>
+        <button id="github-login">Login with GitHub</button>
+      </div>
+      <div id="logged-in" class="hidden">
+        <p>Logged in as: <span id="username"></span></p>
+        <button id="logout">Logout</button>
+      </div>
+    </div>
+    
+    <div id="repo-section" class="hidden">
+      <h3>Select Repository</h3>
+      <select id="repo-select">
+        <option value="">Loading repositories...</option>
+      </select>
+      <button id="save-repo">Save Repository</button>
+    </div>
+    
+    <div id="settings-section" class="hidden">
+      <h3>Settings</h3>
+      <label for="folder-path">Folder path (optional):</label>
+      <input type="text" id="folder-path" placeholder="e.g., leetcode/solutions">
+      <label for="commit-message">Commit message template:</label>
+      <input type="text" id="commit-message" value="Solved: [PROBLEM_NAME] ([DIFFICULTY])">
+      <button id="save-settings">Save Settings</button>
+    </div>
+    
+    <div id="status-section" class="hidden">
+      <div id="status-message" class="status"></div>
+    </div>
+    
+    <script src="popup.js"></script>
+  </body>
+  </html>
+  
