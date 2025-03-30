@@ -33,6 +33,7 @@
       ".CodeMirror-line", // Old LeetCode editor
       "pre[data-lang]", // Generic pre element
       ".ace_content .ace_line", // Ace editor (if any)
+      ".lines-content",
     ];
 
     // Try each selector to extract code
